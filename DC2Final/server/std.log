@@ -1,0 +1,120 @@
+2024-04-26 23:31:00,819 Hostname: Bhavin-PC
+2024-04-26 23:31:00,820 IP Address: 192.168.12.130
+2024-04-26 23:31:02,046 Server Started at IP address 192.168.12.130
+2024-04-26 23:31:02,047 Server Started at Port Number 8080
+2024-04-26 23:31:02,063 + Server ('192.168.12.130', 8080) running
+2024-04-26 23:31:32,688 Managing requests from ('192.168.12.130', 49733).
+2024-04-26 23:31:32,688 > ('192.168.12.130', 49733) : register_server(['1', '192.168.12.130', 5050])
+2024-04-26 23:31:32,688 Inside Register Function
+2024-04-26 23:31:32,688 1
+2024-04-26 23:31:32,689 192.168.12.130
+2024-04-26 23:31:32,689 5050
+2024-04-26 23:31:32,699 Server Registered Successfully
+2024-04-26 23:31:32,700 ! Client ('192.168.12.130', 49733) disconnected.
+2024-04-26 23:31:32,700 Completed request from ('192.168.12.130', 49733).
+2024-04-26 23:32:19,727 Managing requests from ('192.168.12.130', 49751).
+2024-04-26 23:32:19,728 > ('192.168.12.130', 49751) : register_server(['1', '192.168.12.130', 5050])
+2024-04-26 23:32:19,728 Inside Register Function
+2024-04-26 23:32:19,728 1
+2024-04-26 23:32:19,728 192.168.12.130
+2024-04-26 23:32:19,728 5050
+2024-04-26 23:32:19,741 Server Registered Successfully
+2024-04-26 23:32:19,742 ! Client ('192.168.12.130', 49751) disconnected.
+2024-04-26 23:32:19,742 Completed request from ('192.168.12.130', 49751).
+2024-04-26 23:32:19,759 Managing requests from ('192.168.12.130', 49753).
+2024-04-26 23:32:19,760 > ('192.168.12.130', 49753) : get_serverList([])
+2024-04-26 23:32:19,760 Inside Get Server List Function
+2024-04-26 23:32:19,776 [{"0":"1","1":"192.168.12.130","2":"5050"}]
+2024-04-26 23:32:19,779 ! Client ('192.168.12.130', 49753) disconnected.
+2024-04-26 23:32:19,779 Completed request from ('192.168.12.130', 49753).
+2024-04-26 23:32:19,800 Managing requests from ('192.168.12.130', 49754).
+2024-04-26 23:32:19,802 > ('192.168.12.130', 49754) : get_serverList([])
+2024-04-26 23:32:19,803 Inside Get Server List Function
+2024-04-26 23:32:19,806 [{"0":"1","1":"192.168.12.130","2":"5050"}]
+2024-04-26 23:32:19,808 ! Client ('192.168.12.130', 49754) disconnected.
+2024-04-26 23:32:19,809 Completed request from ('192.168.12.130', 49754).
+2024-04-26 23:32:22,929 Managing requests from ('192.168.12.130', 49760).
+2024-04-26 23:32:22,930 > ('192.168.12.130', 49760) : register_server(['1', '192.168.12.130', 5050])
+2024-04-26 23:32:22,930 Inside Register Function
+2024-04-26 23:32:22,930 1
+2024-04-26 23:32:22,930 192.168.12.130
+2024-04-26 23:32:22,930 5050
+2024-04-26 23:32:22,940 Server Registered Successfully
+2024-04-26 23:32:22,941 ! Client ('192.168.12.130', 49760) disconnected.
+2024-04-26 23:32:22,941 Completed request from ('192.168.12.130', 49760).
+2024-04-26 23:32:27,796 Managing requests from ('192.168.12.130', 49765).
+2024-04-26 23:32:27,797 > ('192.168.12.130', 49765) : register_server(['1', '192.168.12.130', 5050])
+2024-04-26 23:32:27,797 Inside Register Function
+2024-04-26 23:32:27,797 1
+2024-04-26 23:32:27,797 192.168.12.130
+2024-04-26 23:32:27,797 5050
+2024-04-26 23:32:27,833 Server Registered Successfully
+2024-04-26 23:32:27,834 ! Client ('192.168.12.130', 49765) disconnected.
+2024-04-26 23:32:27,834 Completed request from ('192.168.12.130', 49765).
+2024-04-26 23:32:28,653 Managing requests from ('192.168.12.130', 49769).
+2024-04-26 23:32:28,654 > ('192.168.12.130', 49769) : upload_file(['fjgnfkgnfkjgnfkljgnfglkjnfkjlngflkgn\r\nfngjfngfjknglfkg\r\nfgfgfgf\r\njfgnfkgn\r\nfhgjgjh\r\njhj\r\nhj\r\nhj\r\nhjhj\r\nh\r\nkjkjkllklklyyyuyuy\r\nyurrffgfhfhgh', 'm2.txt', 'DC', '192.168.12.130'])
+2024-04-26 23:32:28,655 Inside Upload File Function
+2024-04-26 23:32:28,655 Inside Deactivate Duplicate Files Function
+2024-04-26 23:32:28,655 Inside Hash File Name
+2024-04-26 23:32:28,660 
+UPDATE files set filestatus = 'Inactive' where platform = 'DC' and filehasvalue = 'fa24964e085d75e03b52a29881d08ca4389ff83d'
+
+2024-04-26 23:32:28,661 Duplicate file was changed to inactive
+2024-04-26 23:32:28,661 Inside Register Metadata Function
+2024-04-26 23:32:28,661 Inside Hash File Value Function
+2024-04-26 23:32:28,661 Inside Hash File Name
+2024-04-26 23:32:28,662 
+    INSERT INTO files VALUES
+        ('DC','m2.txt','fa24964e085d75e03b52a29881d08ca4389ff83d','282c249b67fd7d4bf762ad8f99d9ccdd7525ecdb','2024-04-26 23:32:28.662219','192.168.12.130','Active')
+
+2024-04-26 23:32:28,671 File Metadata Written to the Database
+2024-04-26 23:32:28,672 File Uploaded to the server
+2024-04-26 23:32:28,673 ! Client ('192.168.12.130', 49769) disconnected.
+2024-04-26 23:32:28,673 Completed request from ('192.168.12.130', 49769).
+2024-04-26 23:32:28,680 Managing requests from ('192.168.12.130', 49771).
+2024-04-26 23:32:28,681 > ('192.168.12.130', 49771) : register_server(['1', '192.168.12.130', 5050])
+2024-04-26 23:32:28,681 Inside Register Function
+2024-04-26 23:32:28,681 1
+2024-04-26 23:32:28,681 192.168.12.130
+2024-04-26 23:32:28,681 5050
+2024-04-26 23:32:28,689 Server Registered Successfully
+2024-04-26 23:32:28,690 ! Client ('192.168.12.130', 49771) disconnected.
+2024-04-26 23:32:28,690 Completed request from ('192.168.12.130', 49771).
+2024-04-26 23:32:44,422 Managing requests from ('192.168.12.130', 49775).
+2024-04-26 23:32:44,423 > ('192.168.12.130', 49775) : register_server(['1', '192.168.12.130', 5050])
+2024-04-26 23:32:44,423 Inside Register Function
+2024-04-26 23:32:44,423 1
+2024-04-26 23:32:44,423 192.168.12.130
+2024-04-26 23:32:44,423 5050
+2024-04-26 23:32:44,434 Server Registered Successfully
+2024-04-26 23:32:44,435 ! Client ('192.168.12.130', 49775) disconnected.
+2024-04-26 23:32:44,435 Completed request from ('192.168.12.130', 49775).
+2024-04-26 23:32:46,483 Managing requests from ('192.168.12.130', 49779).
+2024-04-26 23:32:46,485 > ('192.168.12.130', 49779) : upload_file(['fjgnfkgnfkjgnfkljgnfglkjnfkjlngflkgn\r\nfngjfngfjknglfkg\r\nfgfgfgf\r\njfgnfkgn\r\nfhgjgjh\r\njhj\r\nhj\r\nhj\r\nhjhj\r\nh\r\nkjkjkllklklyyyuyuy\r\nyurrffgfhfhgh', 'm2.txt', 'CSIS', '192.168.12.130'])
+2024-04-26 23:32:46,485 Inside Upload File Function
+2024-04-26 23:32:46,486 Inside Deactivate Duplicate Files Function
+2024-04-26 23:32:46,486 Inside Hash File Name
+2024-04-26 23:32:46,496 
+UPDATE files set filestatus = 'Inactive' where platform = 'CSIS' and filehasvalue = 'fa24964e085d75e03b52a29881d08ca4389ff83d'
+
+2024-04-26 23:32:46,507 Duplicate file was changed to inactive
+2024-04-26 23:32:46,508 Inside Register Metadata Function
+2024-04-26 23:32:46,508 Inside Hash File Value Function
+2024-04-26 23:32:46,509 Inside Hash File Name
+2024-04-26 23:32:46,515 
+    INSERT INTO files VALUES
+        ('CSIS','m2.txt','fa24964e085d75e03b52a29881d08ca4389ff83d','282c249b67fd7d4bf762ad8f99d9ccdd7525ecdb','2024-04-26 23:32:46.509043','192.168.12.130','Active')
+
+2024-04-26 23:32:46,524 File Metadata Written to the Database
+2024-04-26 23:32:46,526 File Uploaded to the server
+2024-04-26 23:32:46,527 ! Client ('192.168.12.130', 49779) disconnected.
+2024-04-26 23:32:46,527 Completed request from ('192.168.12.130', 49779).
+2024-04-26 23:32:46,534 Managing requests from ('192.168.12.130', 49781).
+2024-04-26 23:32:46,535 > ('192.168.12.130', 49781) : register_server(['1', '192.168.12.130', 5050])
+2024-04-26 23:32:46,535 Inside Register Function
+2024-04-26 23:32:46,535 1
+2024-04-26 23:32:46,535 192.168.12.130
+2024-04-26 23:32:46,535 5050
+2024-04-26 23:32:46,543 Server Registered Successfully
+2024-04-26 23:32:46,544 ! Client ('192.168.12.130', 49781) disconnected.
+2024-04-26 23:32:46,544 Completed request from ('192.168.12.130', 49781).
