@@ -123,12 +123,11 @@ def clear_metadata():
 def upload_file(fileContent,fileName,platformName,ipAddress):
     logger.info("Inside Upload File Function")
     deactivate_duplicateFile(platformName,fileName)
-    reg_Status = register_metadata(platformName,fileName,ipAddress)
-    if reg_Status == 'Success':
-        fullFileName = '../content/' + str(platformName) + '/' + str(fileName)
-        with open(fullFileName,"w") as f:
-              f.write(fileContent)
-        f.close()
+    fullFileName = '../content/' + str(platformName) + '/' + str(fileName)
+    with open(fullFileName,"w") as f:
+        f.write(fileContent)
+    f.close()
+    register_metadata(platformName,fileName,ipAddress)
     logger.info("File Uploaded to the server")
     return 'Registed Successully'
 
