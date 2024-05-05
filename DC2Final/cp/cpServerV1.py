@@ -135,7 +135,7 @@ def update_token(position,value):
     print('Inside Token Update')
     if len(token_queue) > 0:
         if str(int(position)+1) not in token_queue:
-            token_queue.append(int(position)+1) ## Update the queue with site requesting for token
+            token_queue.append(str(int(position)+1)) ## Update the queue with site requesting for token
     else:
         token_queue.append(str(int(position)+1))
     print('Token Queue below:')
@@ -147,6 +147,18 @@ def update_token(position,value):
     print(token_array)
     return 'Token Updated'
 
+def check_token(position):
+    print('Inside Token check')
+    reqArry = int(request_array[position])
+    tokArry = int(token_array[position])
+    if int(reqArry) == int(tokArry) + 1: ## To check the Outstanding Request
+        print(' Outstanding Check Completed as Grant')
+        return 'Grant'
+    else:
+        return 'No'
+    ##print('Token Array Below')
+    ##print(token_array)
+    ##return 'Token Updated'
 
 
 def send_token(serverIP,serverPort,tokenArray,tokenQueue):
@@ -172,16 +184,19 @@ def recieve_token(tokenArray,tokenQueue):
 
 def request_cs():
     position = int(cp_serverName) - 1
-    request_array[position] =  request_array[position] + 1
-    logger.info(request_array)
-    print(request_array)
+    #request_array[position] =  request_array[position] + 1
+    #logger.info(request_array)
+    #print(request_array)
     if cp_holdToken == True:
         print('Site already holding a token')
-        bdcst_requestArray_change(position,int(request_array[position]))
+        #####bdcst_requestArray_change(position,int(request_array[position]))
         global cp_in_critical_section
         cp_in_critical_section = True
         return 'Granted'
     else:
+        request_array[position] =  request_array[position] + 1
+        logger.info(request_array)
+        print(request_array)
         print('Broadcasting to request for Token')
         bdcst_requestArray_change(position,int(request_array[position]))
         #print('Response of Broadcast: ' + status)
@@ -196,18 +211,23 @@ def release_cs():
         next_site = token_queue[0]
         print('Next Site: ' + str(next_site))
         if str(next_site) != "":
-            df_next_site_address = df_serverList.loc[df_serverList['ServerName'] == str(next_site)]
-            print(df_next_site_address)
-            token_queue.pop(0)
-            send_token(str(df_next_site_address['ServerIP'].iloc[0]),int(df_next_site_address['ServerPort'].iloc[0]),token_array,token_queue)
-            global cp_holdToken
-            cp_holdToken = False
-            global cp_in_critical_section
-            cp_in_critical_section = False
-            
+            checkToken = check_token(int(int(next_site)-1))
+            if checkToken == 'Grant':
+                df_next_site_address = df_serverList.loc[df_serverList['ServerName'] == str(next_site)]
+                print(df_next_site_address)
+                token_queue.pop(0)
+                send_token(str(df_next_site_address['ServerIP'].iloc[0]),int(df_next_site_address['ServerPort'].iloc[0]),token_array,token_queue)
+                global cp_holdToken
+                cp_holdToken = False
+                global cp_in_critical_section
+                cp_in_critical_section = False
+            else:
+                print('Token Not Sent since Condition didnot satisfy')
+                return 'Did Not Release Token'
     else:
         print('No Site in the Token Queue')
     return 'Release Completed'
+
 
 def get_status():
     final_msg = 'Status for Server ' + str(cp_serverName) + ' || ';
@@ -236,7 +256,7 @@ def get_status():
    
     try:    
         if cp_holdToken == True:
-            final_msg += 'Token Queue : ' + str(token_array) + ' || '
+            final_msg += 'Token Queue : ' + str(token_queue) + ' || '
         else:
             final_msg += 'Token Queue yet to be initialized' 
     except:
